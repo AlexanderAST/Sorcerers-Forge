@@ -12,7 +12,7 @@
 
 Выполни команды
 ```
-docker run --name=backendgo -e POSTGRES_PASSWORD='qwerty' -p5436:5432 -d --rm postgres
+docker-compose up --build
 migrate -path db/userMigrations -database 'postgres://postgres:qwerty@localhost:5436/postgres?sslmode=disable' -verbose down
 migrate -path db/userMigrations -database 'postgres://postgres:qwerty@localhost:5436/postgres?sslmode=disable' -verbose up
 migrate -path db/catalogMigrations -database 'postgres://postgres:qwerty@localhost:5436/postgres?sslmode=disable' -verbose down
