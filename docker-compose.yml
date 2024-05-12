@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  backendgo-main:
+    build: ./
+    command: ["./wait-for-postgres.sh", "db", "./backendgo-main"]
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - POSTGRES_PASSWORD=qwerty
+
+  db:
+    restart: always
+    image: postgres:16.2
+    volumes:
+      - ./.database/postgres/data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=qwerty
+    ports:
+      - "5436:5432"
