@@ -31,10 +31,6 @@ migrate -path db/orederMigrations/ -database 'postgres://postgres:qwerty@localho
 migrate -path db/orederMigrations/ -database 'postgres://postgres:qwerty@localhost:5436/postgres?sslmode=disable' -verbose up
 migrate -path db/likesMigrations/ -database 'postgres://postgres:qwerty@localhost:5436/postgres?sslmode=disable' -verbose down
 migrate -path db/likesMigrations/ -database 'postgres://postgres:qwerty@localhost:5436/postgres?sslmode=disable' -verbose up
-
-
-go build ./cmd/main.go
-go run ./cmd/main.go
 ```
 
 ## Описание APIs
